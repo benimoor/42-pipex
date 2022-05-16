@@ -1,0 +1,11 @@
+make: Entering directory '/opt/pipex/utils'
+cc -Wall -Wextra -Werror -g -c commands.c -o commands.o
+cc -Wall -Wextra -Werror -g -c free_and_close.c -o free_and_close.o
+cc -Wall -Wextra -Werror -g -c ft_split.c -o ft_split.o
+cc -Wall -Wextra -Werror -g -c ft_strjoin.c -o ft_strjoin.o
+cc -Wall -Wextra -Werror -g -c ft_strlen.c -o ft_strlen.o
+cc -Wall -Wextra -Werror -g -c ft_strncmp.c -o ft_strncmp.o
+cc -Wall -Wextra -Werror -g -c parser.c -o parser.o
+cc -Wall -Wextra -Werror -g -c pipex.c -o pipex.o
+cc  commands.o  free_and_close.o  ft_split.o  ft_strjoin.o  ft_strlen.o  ft_strncmp.o  parser.o  pipex.o -o pipex
+make: Leaving directory '/opt/pipex/utils'
