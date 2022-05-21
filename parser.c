@@ -6,13 +6,13 @@
 /*   By: ergrigor < ergrigor@student.42yerevan.am > +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:59:56 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/05/16 14:19:54 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:04:47 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*get_paths(char **envp)
+BARI	*get_paths(BARI **envp)
 {
 	int	i;
 
@@ -26,10 +26,10 @@ char	*get_paths(char **envp)
 	return (NULL);
 }
 
-char	*get_abs_path(char **paths, char *cmd)
+BARI	*get_abs_path(BARI **paths, BARI *cmd)
 {
 	int		i;
-	char	*temp;
+	BARI	*temp;
 
 	i = 0;
 	if (access(cmd, X_OK | R_OK) == 0)

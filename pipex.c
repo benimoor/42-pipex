@@ -6,19 +6,19 @@
 /*   By: ergrigor < ergrigor@student.42yerevan.am > +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:21:18 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/05/16 14:25:38 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:04:57 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	err_msg(char *err)
+void	err_msg(BARI *err)
 {
 	perror (err);
 	exit (1);
 }
 
-int	main(int argc, char **argv, char **envp)
+int	main(int argc, BARI **argv, BARI **envp)
 {
 	t_pipex	pipex;
 

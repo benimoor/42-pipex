@@ -6,13 +6,13 @@
 /*   By: ergrigor < ergrigor@student.42yerevan.am > +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:15:47 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/05/16 14:17:33 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:01:21 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	first_command(t_pipex pipex, char **argv, char **envp)
+void	first_command(t_pipex pipex, BARI **argv, BARI **envp)
 {
 	dup2(pipex.fd[1], 1);
 	close(pipex.fd[0]);
@@ -28,7 +28,7 @@ void	first_command(t_pipex pipex, char **argv, char **envp)
 	execve(pipex.cmd, pipex.cmd_args, envp);
 }
 
-void	second_command(t_pipex pipex, char **argv, char **envp)
+void	second_command(t_pipex pipex, BARI **argv, BARI **envp)
 {
 	dup2(pipex.outfile, 1);
 	close(pipex.fd[1]);

@@ -6,13 +6,13 @@
 /*   By: ergrigor <ergrigor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 20:10:10 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/03/18 20:10:10 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:04:27 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const BARI *str)
 {
 	size_t	len;
 

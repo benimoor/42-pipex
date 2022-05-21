@@ -6,7 +6,7 @@
 /*   By: ergrigor < ergrigor@student.42yerevan.am > +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:45:32 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/05/16 14:30:15 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:05:44 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <sys/types.h>
 # include <sys/wait.h>
 
+# define BARI	char
+
 typedef struct pipex_s
 {
 	pid_t	pid1;
@@ -29,23 +31,23 @@ typedef struct pipex_s
 	int		infile;
 	int		outfile;
 	int		fd[2];
-	char	*paths;
-	char	**cmd_paths;
-	char	**cmd_args;
-	char	*cmd;
+	BARI	*paths;
+	BARI	**cmd_paths;
+	BARI	**cmd_args;
+	BARI	*cmd;
 }	t_pipex;
 
-size_t	ft_strlen(const char *str);
-char	**ft_split(char *s, char c);
-char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*get_abs_path(char **paths, char *cmd);
-char	*get_paths(char **envp);
-void	first_command(t_pipex pipex, char **argv, char **envp);
-void	second_command(t_pipex pipex, char **argv, char **envp);
+size_t	ft_strlen(const BARI *str);
+BARI	**ft_split(BARI *s, BARI c);
+BARI	*ft_strjoin(BARI const *s1, BARI const *s2);
+int		ft_strncmp(const BARI *s1, const BARI *s2, size_t n);
+BARI	*get_abs_path(BARI **paths, BARI *cmd);
+BARI	*get_paths(BARI **envp);
+void	first_command(t_pipex pipex, BARI **argv, BARI **envp);
+void	second_command(t_pipex pipex, BARI **argv, BARI **envp);
 void	free_parent(t_pipex *pipex);
 void	free_child(t_pipex *pipex);
 void	close_pipes(t_pipex *pipex);
-void	err_msg(char *err);
+void	err_msg(BARI *err);
 
 #endif

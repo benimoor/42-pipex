@@ -6,13 +6,13 @@
 /*   By: ergrigor <ergrigor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 20:03:02 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/03/25 19:14:03 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:04:08 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static size_t	getwordcount(char const *s, char c)
+static size_t	getwordcount(BARI const *s, BARI c)
 {
 	size_t	count;
 	size_t	i;
@@ -36,13 +36,13 @@ static size_t	getwordcount(char const *s, char c)
 	return (count);
 }
 
-static char	*fillword(const char *s, size_t startindex, size_t len)
+static BARI	*fillword(const BARI *s, size_t startindex, size_t len)
 {
-	char	*word;
+	BARI	*word;
 	size_t	i;
 
 	i = -1;
-	word = malloc(sizeof(char) * (len + 1));
+	word = malloc(sizeof(BARI) * (len + 1));
 	if (!word)
 		return (NULL);
 	while (++i < len)
@@ -51,18 +51,18 @@ static char	*fillword(const char *s, size_t startindex, size_t len)
 	return (word);
 }
 
-char	**ft_split(char *s, char c)
+BARI	**ft_split(BARI *s, BARI c)
 {
 	size_t	startindex;
 	size_t	endindex;
 	size_t	index;
 	size_t	wordcount;
-	char	**result;
+	BARI	**result;
 
 	startindex = 0;
 	index = -1;
 	wordcount = getwordcount(s, c);
-	result = malloc(sizeof(char *) * (wordcount + 1));
+	result = malloc(sizeof(BARI *) * (wordcount + 1));
 	if (!s || !result)
 		return (NULL);
 	while (++index < wordcount)

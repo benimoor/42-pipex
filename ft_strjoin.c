@@ -6,21 +6,21 @@
 /*   By: ergrigor <ergrigor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 20:09:35 by ergrigor          #+#    #+#             */
-/*   Updated: 2022/03/18 20:09:35 by ergrigor         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:04:18 by ergrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+BARI	*ft_strjoin(BARI const *s1, BARI const *s2)
 {
-	char	*joined_str;
+	BARI	*joined_str;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	joined_str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	joined_str = (BARI *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!joined_str)
 		return (NULL);
 	while (s1[i] != '\0')
